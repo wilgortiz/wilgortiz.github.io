@@ -1,12 +1,93 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
+
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>pagina web</title>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+
+  <style>
+    .clasemenu {
+      height: 100px;
+      display: flex;
+      justify-content: space-between;
+      align-items:center;
+      padding: 10px;
+      background-color: #27355052;
+      box-sizing: border-box;
+      /*
+            width: auto;
+            height: 100px;
+            padding: 10px;
+            border: 1px solid black;
+            margin: 10px;
+            box-sizing: border-box; */
+    }
+
+    img {
+      height: 70px;
+    }
+
+    nav ul {
+      list-style: none;
+      font-family: 'Lucida Sans';
+      font-size: 20px;
+      margin: 0;
+      padding: 0;
+      display: flex;
+    }
+
+    nav li {
+      margin: 0 10px;
+    }
+
+    nav a {
+      text-decoration: none;
+      color: #ffffff;
+    }
+
+    .cajaportada {
+      box-sizing: border-box;
+      margin-top: 10px;
+      /*se usa para que la caja tenga solo
+            un margen en su parte de arriba */
+      height: 500px;
+      overflow: hidden;
+      /*se usa para que se muestre la
+      imagen solo hasta donde indica el alto de la caja*/
+      align-items: center;
+      display: flex;
+    }
+
+    .portada {
+      width: 100%;
+      height: auto;
+    }
+
+  </style>
 </head>
+
 <body>
-    <p> primera web, trabajando, empezamos </p>
+  <!-- menu -->
+  <div class="clasemenu">
+    <img src="imagenes/logo-universidad.png" alt="logo de la universidad">
+    <nav>
+      <ul>
+        <li><a href="#">estudiantes</a></li>
+        <li><a href="#">cursos</a></li>
+        <li><a href="#">sobre nosotros</a></li>
+      </ul>
+    </nav>
+  </div> 
+
+  <div class="cajaportada"> <!-- portada con imagen-->
+
+    <img class="portada" src="imagenes/graduation-4781915_1280.jpg" alt="">
+
+  </div>
+
+
 </body>
+
 </html>
