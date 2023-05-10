@@ -12,7 +12,7 @@
       height: 100px;
       display: flex;
       justify-content: space-between;
-      align-items:center;
+      align-items: center;
       padding: 10px;
       background-color: #27355052;
       box-sizing: border-box;
@@ -60,11 +60,48 @@
       display: flex;
     }
 
+    .cajaportada .cajitadetexto {
+
+      position: absolute;
+
+      top: 330px;
+
+      width: 500px;
+      height: 160px;
+
+      background: rgba(255, 0, 0, 0.65);
+
+      display: flex;
+      align-items: center;
+
+      overflow: hidden;
+
+    }
+
     .portada {
       width: 100%;
       height: auto;
     }
 
+    .noticias {
+
+      width: 500px;
+      height: 400px;
+
+      display: flex;
+      border-color: aqua;
+border-style: double;
+      margin-top: 5px;
+    }
+
+    .imagenNoticias{
+
+      width: 500px;
+      height: 200px;
+
+      display: flex;
+      background-color: rgb(198, 236, 29);
+    }
   </style>
 </head>
 
@@ -74,20 +111,36 @@
     <img src="imagenes/logo-universidad.png" alt="logo de la universidad">
     <nav>
       <ul>
-        <li><a href="#">estudiantes</a></li>
-        <li><a href="#">cursos</a></li>
-        <li><a href="sobre nosotros.html">sobre nosotros</a></li>
+        <li><a href="#">Estudiantes</a></li>
+        <li><a href="#">Cursos</a></li>
+        <li><a href="sobre nosotros.html">Sobre Nosotros</a></li>
+        <li><a href="formulario.html">Contacto</a></li>
       </ul>
     </nav>
-  </div> 
+  </div>
 
   <div class="cajaportada"> <!-- portada con imagen-->
 
     <img class="portada" src="imagenes/graduation-4781915_1280.jpg" alt="">
-
+    <div class="cajitadetexto">
+      <p style="font-size: 50px; font-family: helvetica;"> "Mas de 1000 graduados por año"</p>
+    </div>
   </div>
 
+  <div class="noticias"> <!--contenedor--> 
+    <div class="cajitaTextoNoticias"><!-- la caja de texto--> 
+      <h3>noticias</h3>
 
+      <p> Encuentro del Rector con docentes
+        de Historia, Letras y Lenguas Modernas</p>
+
+
+    </div>
+
+
+    
+
+  </div>
 </body>
 
 </html>
