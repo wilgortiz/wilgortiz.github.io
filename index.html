@@ -5,7 +5,7 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>UA</title>
+  <title>UdA</title>
 
   <style>
     .clasemenu {
@@ -48,34 +48,34 @@
     }
 
     .cajaportada {
-      box-sizing: border-box;
       margin-top: 10px;
-      /*se usa para que la caja tenga solo
+      /* se usa para que la caja tenga solo
             un margen en su parte de arriba */
       height: 500px;
       overflow: hidden;
-      /*se usa para que se muestre la
-      imagen solo hasta donde indica el alto de la caja*/
-      align-items: center;
+      align-items: flex-end;
       display: flex;
+      /*
+      box-sizing: border-box;
+      width:100%;
+      */
     }
 
+    .parrafo {
+      padding: 10px;
+    }
+
+
     .cajaportada .cajitadetexto {
-
       position: absolute;
-
-      top: 330px;
-
+      top: 250px;
       width: 500px;
       height: 160px;
-
-      background: rgba(255, 0, 0, 0.65);
-
+      background: rgb(186 190 199 / 83%);
       display: flex;
       align-items: center;
 
       overflow: hidden;
-
     }
 
     .portada {
@@ -83,36 +83,177 @@
       height: auto;
     }
 
-    .noticias {
-
-      width: 500px;
-      height: 400px;
-
+    .cajitadetexto {
       display: flex;
-      border-color: aqua;
-border-style: double;
-      margin-top: 5px;
+      flex-direction: row;
+      align-items: flex-start;
     }
 
-    .imagenNoticias{
+    .cajadenoticias {
+      /* contenedor padre */
+      display: flex;
 
+      /* 
+      border-color: salmon;
+      border-style: solid;
+*/
+
+    }
+
+    .cajita2noticias,
+    .cajita1noticias {
+
+      margin-top: 2px;
+      /* es lo mismo que hacer 2px 2px 2px 2px */
+      padding: 5px;
+      /* espacio entre el contenido y el borde del contenedor */
+      /*
+      border-color: rgb(0, 68, 255);
+      border-style: solid;
+*/
+      width: 650px;
+      height: 700px;
+      overflow: hidden;
+    }
+
+
+    .cajita2noticias img,
+    .cajita1noticias img {
+      width: auto;
+      height: 400px;
+
+      margin: 1px;
+      overflow: hidden;
+      /*  border-radius: 5px;  */
+      /* para que el texto trabaje al lado de la imagen     
+      float: left;*/
+    }
+
+    .cajadenoticias p {
+
+      font-size: 20px;
+    }
+
+    .cajadenoticias h3 {
+
+      font-size: 25px;
+
+    }
+
+    .imagenNoticias {
       width: 500px;
+      height: 200px;
+      background-color: rgb(198, 236, 29);
+      display: flex;
+    }
+
+    #novedades {
+      margin: 5px;
+      display: flex;
+      justify-content: center;
+      font-size: 20px;
+    }
+
+    .footer1cajapadre {
+      margin-top: 5px;
+
+      background: rgb(186 190 199);
       height: 200px;
 
       display: flex;
-      background-color: rgb(198, 236, 29);
+      flex-direction: column;
+
+      align-items: center;
+    }
+
+
+    .redesSociales {
+      display: flex;
+      justify-content: center;
+      margin-top: 8px;
+    }
+
+    .redesSociales img {
+      margin: 3px;
+      height: 30px;
+   
+    }
+
+    .contacto {
+
+      display: flex;
+      flex-direction: column;
+
+      justify-content: center;
+      align-items: center;
+
+      font-size: 17px;
+    }
+
+    .imgCarrusel {
+      width: 100%;
+      height: auto;
+
+      display: flex;
+      align-items: start;
+      justify-content: center;
+    }
+
+    #cajita_botones {
+      margin-top: 1px;
+      display: flex;
+      justify-content: space-between;
+
     }
   </style>
+
+
+  <script>
+    /* array*/
+    var imageness = ["imagenes/element5-digital-unsplash.jpg",
+      "imagenes/jakob-braun-unsplash.jpg",
+
+      "imagenes/vladimir-visotsky-unsplash.jpg",];
+
+    var i = 0;
+    /*funcion para el carrusel*/
+    function carrusel() {
+      var imgc = document.createElement('img');
+      imgc.src = imageness[i];
+      imgc.classList.add('imgCarrusel'); // Agregar la clase imgCarrusel al elemento img
+      document.getElementById('content').innerHTML = '';
+      document.getElementById('content').appendChild(imgc);
+    }
+    /*funcion para que las img vayan hacia la derecha*/
+    function derecha() {
+      i++;
+      i = i % imageness.length; //modulo para garantizar que este dentro del rango
+      carrusel();
+    }
+    /*funcion para que las img vayan hacia la derecha*/
+    function izquierda() {
+      i--;
+      if (i < 0) {
+        i = imageness.length - 1;
+      }
+      carrusel();
+    }
+
+    carrusel();
+  </script>
+
 </head>
 
-<body>
+<body onload="carrusel();"> <!-- <body onload="carrusel();">-->
   <!-- menu -->
   <div class="clasemenu">
-    <img src="imagenes/logo-universidad.png" alt="logo de la universidad">
+    <a href="index.html">
+      <img src="imagenes/logo-universidad.png" alt="logo de la universidad">
+    </a>
     <nav>
       <ul>
-        <li><a href="#">Estudiantes</a></li>
-        <li><a href="#">Cursos</a></li>
+        <!--<li><a href="#">Estudiantes</a></li>-->
+        <li><a href="cursos.html">Cursos</a></li>
         <li><a href="sobre nosotros.html">Sobre Nosotros</a></li>
         <li><a href="formulario.html">Contacto</a></li>
       </ul>
@@ -120,27 +261,104 @@ border-style: double;
   </div>
 
   <div class="cajaportada"> <!-- portada con imagen-->
+    <div class="contents" id="content"></div>
 
-    <img class="portada" src="imagenes/graduation-4781915_1280.jpg" alt="">
+    <!-- <img class="portada" src="imagenes/graduation-4781915_1280.jpg" alt="">portada con imagen-->
+
     <div class="cajitadetexto">
-      <p style="font-size: 50px; font-family: helvetica;"> "Mas de 1000 graduados por año"</p>
+      <div class="parrafo">
+        <p style="font-size: 50px; font-family: helvetica; "> "Mas de 1000 graduados por año"</p>
+      </div>
+
     </div>
   </div>
 
-  <div class="noticias"> <!--contenedor--> 
-    <div class="cajitaTextoNoticias"><!-- la caja de texto--> 
-      <h3>noticias</h3>
+
+  <div id="cajita_botones">
+    <button onclick="izquierda()">izquierda</button> <!--boton para la izquierda-->
+    <button onclick="derecha()">derecha</button> <!--boton para la derecha-->
+  </div>
+
+
+  <div id="novedades">
+    <h2> Novedades </h2>
+  </div>
+  <div class="cajadenoticias">
+
+    <div class="cajita1noticias"> <!--contenedor-->
+      <img src="./imagenes/reunion.jpg" alt="img noticias 1">
+      <h3><a href="reunion con docentes.html"> Encuentro del Rector con docentes
+          de Historia, Letras y Lenguas Modernas.</a></h3>
 
       <p> Encuentro del Rector con docentes
-        de Historia, Letras y Lenguas Modernas</p>
+        de Historia, Letras y Lenguas Modernas.
+        Durante esta reunión, se reunieron el Rector y
+        los profesores de estas disciplinas para discutir y
+        compartir ideas sobre diversos temas relacionados con
+        la educación,la investigación y el desarrollo curricular.
 
+        En un destacado encuentro, el Rector de la Universidad de
+        Artanis se reunió con los docentes de las áreas de Historia,
+        Letras y Lenguas Modernas. 
+      </p>
+    </div>
+
+    <div class="cajita2noticias"><!-- la caja de texto-->
+
+      <img src="./imagenes/tech-daily-ztYmIQecyH4-unsplash (1).jpg" alt="img noticias 2">
+      <div>
+        <h3><a href="entreLasMejoresEnEconomia.html"> La Universidad de Artanis entre las mejores
+            del mundo en Economía por tercer año consecutivo</a></h3>
+
+        <p>
+
+          La Universidad de Artanis continúa consolidando su prestigio
+          internacional al ser reconocida como una de las mejores
+          instituciones educativas del mundo en el campo de la
+          Economía por tercer año consecutivo.
+          Este logro destaca la excelencia académica y el
+          compromiso constante de la universidad para ofrecer
+          una educación de calidad en esta disciplina fundamental.
+
+
+        </p>
+      </div>
 
     </div>
 
-
-    
-
   </div>
+
+
+  <!-- footer -->
+  <footer class="footer1cajapadre">
+    <div class="cajainterna">
+
+      <div class="redesSociales">
+
+        <a href="https://www.facebook.com">
+          <img id="footerimg" src="./imagenes/fb.png" alt="facebook">
+        </a>
+
+        <a href="https://www.instagram.com">
+          <img src="./imagenes/instagram.png" alt="instagram">
+        </a>
+
+        <a href="https://www.twitter.com">
+          <img src="./imagenes/tw.png" alt="instagram">
+        </a>
+      </div>
+
+      <div class="contacto">
+
+        <p> teléfono: 0808-123-1148 | Acreditación | Política de Privacidad | info@ua.edu </p>
+        <p> Montes Placido 893, San Luis , Argentina.
+          1808-521-1868 | info@aiu.edu</p>
+        <p> Copyright © 1996-2023 Universidad de Artanis. </p>
+      </div>
+    </div>
+
+  </footer>
+
 </body>
 
 </html>

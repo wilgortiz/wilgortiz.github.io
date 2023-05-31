@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 
 <head>
     <meta charset="UTF-8">
@@ -47,29 +47,37 @@
             color: #ffffff;
         }
 
+
         .cajaportada {
-            box-sizing: border-box;
+            /* box-sizing: border-box; */
             margin-top: 10px;
-            /*se usa para que la caja tenga solo
-                un margen en su parte de arriba */
-            height: 500px;
+            margin-left: 10px;
+            margin-bottom: 10px;
+            height: 700px;
+            width: auto;
             overflow: hidden;
-            /*se usa para que se muestre la
-          imagen solo hasta donde indica el alto de la caja*/
-            align-items: center;
-            display: flex;
+            /* align-items: center; */
+
+            float: right;
+
+
         }
 
-        .portada {
-            width: 100%;
-            height: auto;
+        .cajaportada img {
+            height: 700px;
+            width: auto;
         }
 
         .cajatextohistoria p,
         h2 {
 
             font-family: lucida sans bold;
-            font-size: 30px;
+            font-size: 28px;
+        }
+
+        h2{
+
+            font-size: 45px ;
         }
     </style>
 </head>
@@ -83,45 +91,50 @@
         </a>
         <nav>
             <ul>
-                <li><a href="#">estudiantes</a></li>
-                <li><a href="#">cursos</a></li>
-                <li><a href="sobre nosotros.html">sobre nosotros</a></li>
+                <!--<li><a href="#">Estudiantes</a></li>-->
+                <li><a href="#">Cursos</a></li>
+                <li><a href="formulario.html">Contacto</a></li>
             </ul>
         </nav>
     </div>
 
-    <div class="cajaportada"> <!-- portada con imagen-->
 
-        <img class="portada" src="imagenes/book.jpg" alt="">
 
+    <div class="padre">
+        <div class="cajaportada"> <!-- portada con imagen-->
+
+            <img src="imagenes/clark-van-der-beken-unsplash.jpg" alt="">
+
+        </div>
+
+        <div class="cajatextohistoria"> <!-- reseña sobre la universidad-->
+
+            <h2> <b> Nuestra Historia </b></h2>
+            <p> La Universidad de Artanis es una institución educativa de prestigio que fue
+                fundada en 1996 con el objetivo de ofrecer una educación superior de calidad
+                en el campo de las artes y las humanidades. Desde su creación, la universidad
+                ha estado en constante proceso de crecimiento y ha evolucionado para
+                convertirse en una de las principales instituciones educativas de su tipo en
+                la región.
+
+            <p> A lo largo de los años, la Universidad de Artanis ha ampliado su oferta
+                académica y ha añadido nuevas carreras a su catálogo, lo que le ha permitido
+                atraer a un mayor número de estudiantes de diversas partes del mundo.
+                Además, la universidad ha invertido en la mejora de su infraestructura,
+                construyendo nuevas instalaciones y modernizando las existentes para asegurar
+                que sus estudiantes tengan acceso a las mejores herramientas y tecnologías
+                para el aprendizaje.</p>
+
+            <p> El crecimiento de la Universidad de Artanis es un reflejo de su compromiso
+                con la excelencia académica y la innovación en la educación superior.
+                Con una facultad de renombre y un cuerpo estudiantil diverso y talentoso,
+                la universidad está bien posicionada para seguir creciendo y expandiendo
+                su impacto en la comunidad local y global. En resumen, la historia de la
+                Universidad de Artanis es una historia de éxito y crecimiento constante
+                que inspira a las nuevas generaciones de estudiantes y educadores.</p>
+        </div>
     </div>
 
-    <div class="cajatextohistoria"> <!-- reseña sobre la universidad-->
-
-        <h2> <b> Nuestra Historia </b></h2>
-        <p> La Universidad de Artanis es una institución educativa de prestigio que fue
-            fundada en 1996 con el objetivo de ofrecer una educación superior de calidad
-            en el campo de las artes y las humanidades. Desde su creación, la universidad
-            ha estado en constante proceso de crecimiento y ha evolucionado para
-            convertirse en una de las principales instituciones educativas de su tipo en
-            la región.
-
-        <p> A lo largo de los años, la Universidad de Artanis ha ampliado su oferta
-            académica y ha añadido nuevas carreras a su catálogo, lo que le ha permitido
-            atraer a un mayor número de estudiantes de diversas partes del mundo.
-            Además, la universidad ha invertido en la mejora de su infraestructura,
-            construyendo nuevas instalaciones y modernizando las existentes para asegurar
-            que sus estudiantes tengan acceso a las mejores herramientas y tecnologías
-            para el aprendizaje.</p>
-
-        <p> El crecimiento de la Universidad de Artanis es un reflejo de su compromiso
-            con la excelencia académica y la innovación en la educación superior.
-            Con una facultad de renombre y un cuerpo estudiantil diverso y talentoso,
-            la universidad está bien posicionada para seguir creciendo y expandiendo
-            su impacto en la comunidad local y global. En resumen, la historia de la
-            Universidad de Artanis es una historia de éxito y crecimiento constante
-            que inspira a las nuevas generaciones de estudiantes y educadores.</p>
-    </div>
 </body>
 
 
