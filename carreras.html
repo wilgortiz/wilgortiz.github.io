@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Formulario de contacto_UdA</title>
+    <title>Carreras</title>
 
 
     <style>
@@ -13,15 +13,16 @@
 
             height: 100px;
             display: flex;
-            justify-content: space-between;
+            justify-content: center;
             align-items: center;
             padding: 10px;
-            background-color: #27355052;
-            box-sizing: border-box;
+            background-color: #ffffff;
+
 
         }
 
         img {
+
             height: 70px;
         }
 
@@ -35,6 +36,7 @@
         }
 
         nav li {
+            
             margin: 0 10px;
         }
 
@@ -43,17 +45,33 @@
             color: #ffffff;
         }
 
-        h2,
-        h1 {
+        body {
 
+            background-color: rgb(226, 146, 26);
+        }
+
+
+
+        
+        #cont_titulo {
+            height: 100px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-top: 5px;
             font-family: helvetica;
+            background-color: aliceblue;
+        }
+
+        .contenedorF {
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
         }
 
 
-        body{
-
-            background-color:aliceblue ;
-        }
         form {
             display: flex;
             flex-direction: column;
@@ -70,14 +88,6 @@
             background-color: aliceblue;
         }
 
-        .contenedorF {
-
-            display: flex;
-            justify-content: center;
-            align-items: center;
-
-        }
-
         input,
         button,
         textarea {
@@ -87,7 +97,7 @@
         }
 
         #errores {
-            border: 2px solid red;
+            border: 1px solid red;
             padding: 5px;
             display: none;
         }
@@ -107,10 +117,18 @@
         let reg_correo = /^\w+([.-]?\w+)*@\w+([.-]?\w+)*(\.\w{2,})+$/;
 
         function validar() {
+            let f_carreras = document.querySelector("#opc_carreras");
+            f_carreras.classList.remove("error");
+
             let f_nombre = document.querySelector("#f_nombre");
             f_nombre.classList.remove("error");
+
+            let f_apellido = document.querySelector("#f_apellido");
+            f_apellido.classList.remove("error");
+
             let f_mensaje = document.querySelector("#f_mensaje");
             f_mensaje.classList.remove("error");
+
             let f_email = document.querySelector("#f_email");
             f_email.classList.remove("error");
             let lta_errores = document.querySelector("#errores");
@@ -119,21 +137,36 @@
             let lta_mensajes = document.querySelector("#mensajes");
             let hubo_error = false;
 
-            if (f_nombre.value == "") {
-                f_nombre.classList.add("error");
+            if (f_carreras.value == "") {
+                f_carreras.classList.add("error");
                 let p = document.createElement("p");
-                p.innerHTML = "Falta el nombre";
+                p.innerHTML = "ingrese una carrera";
                 lta_errores.appendChild(p);
                 hubo_error = true;
             }
 
-            if (f_mensaje.value == "") {
-                f_mensaje.classList.add("error");
+
+            if (f_nombre.value == "") {
+                f_nombre.classList.add("error");
                 let p = document.createElement("p");
-                p.innerHTML = "Falta el mensaje";
+                p.innerHTML = "ingrese su nombre";
                 lta_errores.appendChild(p);
                 hubo_error = true;
-            } else if (f_mensaje.value.length > 200) {
+            }
+
+            if (f_apellido.value == "") {
+                f_apellido.classList.add("error");
+                let p = document.createElement("p");
+                p.innerHTML = "ingrese su apellido";
+                lta_errores.appendChild(p);
+                hubo_error = true;
+            }
+
+
+
+
+
+            if (f_mensaje.value != "" && f_mensaje.value.length > 200) {
                 f_mensaje.classList.add("error");
                 let p = document.createElement("p");
                 p.innerHTML = "200 caracteres como maximo, por favor vuelva a ingresar su consulta";
@@ -165,7 +198,7 @@
                 let p = document.createElement("p");
 
                 p.innerHTML =
-                    f_nombre.value + " dice: " +
+                    f_nombre.value + " eligio la carrera: " + f_carreras +
                     f_mensaje.value + "<br/>" + " Contacto: " +
                     f_email.value + ".";
 
@@ -184,44 +217,56 @@
 </head>
 
 <body>
+
+
+
     <div class="barra">
         <a href="index.html">
             <img src="imagenes/logo-universidad.png" alt="logo de la universidad">
         </a>
-        <nav>
-            <ul>
-                <li><a href="carreras(facultades).html">Carreras</a></li>
-                <li><a href="cursos.html">Cursos</a></li>
-                <li><a href="sobre nosotros.html">Sobre Nosotros</a></li>
-                <li><a href="formulario.html">Contacto</a></li>
-            </ul>
-        </nav>
+
     </div>
 
-    <h1 style="text-align: center;">Formulario de Contacto</h1>
-    <h2 style="text-align: center; "><b> Si desea hacer una consulta escríbanos a traves
-            del formulario completando los campos requeridos
-        </b></h2>
-
-
-
+    <div id="cont_titulo">
+        <h2><b> Elegi una Carrera y completa tus datos, a la
+                brevedad te responderemos con toda la info.-
+            </b></h2>
+    </div>
 
     <div class="contenedorF">
+
         <form onsubmit="return validar()" id="f_contacto">
+
+            <label for="carreras">Carreras *</label>
+            <select name="opc_carreras" id="opc_carreras">
+                <option value="">elegi una carrera</option>
+                <option value="abogacia">abogacia</option>
+                <option value="tec. en desarrollo de software">tec. en desarrollo de software</option>
+                <option value="Lic. en Economia">Lic. en Economia</option>
+            </select>
             <label for="f_nombre">Nombre *</label>
             <input id="f_nombre" autofocus />
-            <label for="f_mensaje">Mensaje *</label>
-            <textarea id="f_mensaje" rows="3"></textarea>
+
+            <label for="f_apellido">Apellido *</label>
+            <input id="f_apellido" />
+
             <label for="f_email">Email *</label>
             <input id="f_email" />
+
+            <label for="f_mensaje">Mensaje </label>
+            <textarea id="f_mensaje" rows="3"></textarea>
+
             <button type="submit">Enviar</button>
             <label>* campos obligatorios</label>
             <div id="errores"></div>
 
         </form>
+
+
+
+
     </div>
     <div id="mensajes" style="text-align: center;"></div>
-
 </body>
 
 

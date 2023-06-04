@@ -31,8 +31,8 @@
 
     nav ul {
       list-style: none;
-      font-family: 'Lucida Sans';
-      font-size: 20px;
+    font-family: helvetica;
+      font-size: 18px;
       margin: 0;
       padding: 0;
       display: flex;
@@ -43,35 +43,57 @@
     }
 
     nav a {
-      text-decoration: none;
-      color: #ffffff;
+      text-decoration: double;
+      color: #000000;
+
+      font-weight: bold;
     }
 
     .cajaportada {
       margin-top: 10px;
+      margin-bottom: 10px;
       /* se usa para que la caja tenga solo
             un margen en su parte de arriba */
-      height: 500px;
+      height: 477px;
       overflow: hidden;
-      align-items: flex-end;
-      display: flex;
-      /*
-      box-sizing: border-box;
-      width:100%;
-      */
+      width: 100%;
+
+
     }
+
+    #cajita_botones {
+      width: 98.4%;
+
+      position: absolute;
+      top: 45%;
+
+      display: flex;
+      justify-content: space-between;
+    }
+
+    #cajita_botones button {
+      height: 35px;
+      width: 80px;
+      border: none;
+      background-color: rgba(128, 0, 128, 0.5);
+      color: rgb(255, 255, 255);
+    }
+
 
     .parrafo {
       padding: 10px;
     }
 
+    .parrafo a {
+      text-decoration: none;
+    }
 
     .cajaportada .cajitadetexto {
       position: absolute;
       top: 250px;
       width: 500px;
       height: 160px;
-      background: rgb(186 190 199 / 83%);
+      background: rgba(186, 190, 199, 0.701);
       display: flex;
       align-items: center;
 
@@ -87,16 +109,13 @@
       display: flex;
       flex-direction: row;
       align-items: flex-start;
+
+      padding: 0px 10px 0px 10px;
     }
 
     .cajadenoticias {
       /* contenedor padre */
       display: flex;
-
-      /* 
-      border-color: salmon;
-      border-style: solid;
-*/
 
     }
 
@@ -114,7 +133,10 @@
       width: 650px;
       height: 700px;
       overflow: hidden;
+
+      font-family:Helvetica;
     }
+
 
 
     .cajita2noticias img,
@@ -140,6 +162,12 @@
 
     }
 
+    .cajadenoticias a {
+
+      color: coral;
+      text-decoration: none;
+    }
+
     .imagenNoticias {
       width: 500px;
       height: 200px;
@@ -148,10 +176,13 @@
     }
 
     #novedades {
-      margin: 5px;
+      margin: 5px 0px 5px;
       display: flex;
       justify-content: center;
-      font-size: 20px;
+      font-size: 30px;
+      font-family: helvetica;
+      background-color: aliceblue;
+      border: 2px solid rgb(255, 255, 255);
     }
 
     .footer1cajapadre {
@@ -176,11 +207,11 @@
     .redesSociales img {
       margin: 3px;
       height: 30px;
-   
+
     }
 
     .contacto {
-
+      font-family: helvetica;
       display: flex;
       flex-direction: column;
 
@@ -197,13 +228,6 @@
       display: flex;
       align-items: start;
       justify-content: center;
-    }
-
-    #cajita_botones {
-      margin-top: 1px;
-      display: flex;
-      justify-content: space-between;
-
     }
   </style>
 
@@ -253,6 +277,7 @@
     <nav>
       <ul>
         <!--<li><a href="#">Estudiantes</a></li>-->
+        <li> <a href="carreras(facultades).html">Carreras</a></li>
         <li><a href="cursos.html">Cursos</a></li>
         <li><a href="sobre nosotros.html">Sobre Nosotros</a></li>
         <li><a href="formulario.html">Contacto</a></li>
@@ -261,28 +286,38 @@
   </div>
 
   <div class="cajaportada"> <!-- portada con imagen-->
+
     <div class="contents" id="content"></div>
 
     <!-- <img class="portada" src="imagenes/graduation-4781915_1280.jpg" alt="">portada con imagen-->
 
     <div class="cajitadetexto">
       <div class="parrafo">
-        <p style="font-size: 50px; font-family: helvetica; "> "Mas de 1000 graduados por año"</p>
+        <a href="carreras.html">
+          <p style="font-size: 50px; font-family: helvetica; "> "Ingreso agosto 2023
+            Comenzá tu carrera"</p>
+        </a>
       </div>
 
     </div>
+
+    <div id="cajita_botones">
+      <button onclick="izquierda()">
+        <<< </button> <!--boton para la izquierda-->
+          <button onclick="derecha()">>>></button> <!--boton para la derecha-->
+    </div>
+
+
   </div>
 
 
-  <div id="cajita_botones">
-    <button onclick="izquierda()">izquierda</button> <!--boton para la izquierda-->
-    <button onclick="derecha()">derecha</button> <!--boton para la derecha-->
-  </div>
+
 
 
   <div id="novedades">
-    <h2> Novedades </h2>
+    <h2> Novedades</h2>
   </div>
+
   <div class="cajadenoticias">
 
     <div class="cajita1noticias"> <!--contenedor-->
@@ -299,7 +334,7 @@
 
         En un destacado encuentro, el Rector de la Universidad de
         Artanis se reunió con los docentes de las áreas de Historia,
-        Letras y Lenguas Modernas. 
+        Letras y Lenguas Modernas.
       </p>
     </div>
 
@@ -320,13 +355,50 @@
           compromiso constante de la universidad para ofrecer
           una educación de calidad en esta disciplina fundamental.
 
+        </p>
+      </div>
+    </div>
+  </div>
+
+
+  <div class="cajadenoticias">
+
+    <div class="cajita1noticias"> <!--contenedor-->
+      <img src="./imagenes/graduation.jpg" alt="img noticias 1">
+      <h3><a href="nuevos egresados.html"> Nuevos egresados de la UdA </a></h3>
+
+      <p> La Universidad de Artanis celebra con orgullo la
+        graduación de su más reciente grupo de estudiantes.
+
+
+        Con un total de 98 egresados en diversas áreas de
+        estudio, esta generación demuestra el compromiso y
+        la dedicación que han demostrado durante su tiempo en la institución.
+      </p>
+    </div>
+
+    <div class="cajita2noticias"><!-- la caja de texto-->
+
+      <img src="./imagenes/chris-montgomery--unsplash.jpg" alt="img noticias 2">
+      <div>
+        <h3><a href="Jornada via zoom sobre nuevas Tecnologias.html"> Jornada virtual sobre nuevas Tecnologias</a></h3>
+
+        <p>
+
+          La Universidad de Artanis continúa consolidando su prestigio
+          internacional al ser reconocida como una de las mejores
+          instituciones educativas del mundo en el campo de la
+          Economía por tercer año consecutivo.
+          Este logro destaca la excelencia académica y el
+          compromiso constante de la universidad para ofrecer
+          una educación de calidad en esta disciplina fundamental.
 
         </p>
       </div>
-
     </div>
-
   </div>
+
+
 
 
   <!-- footer -->
@@ -350,9 +422,8 @@
 
       <div class="contacto">
 
-        <p> teléfono: 0808-123-1148 | Acreditación | Política de Privacidad | info@ua.edu </p>
-        <p> Montes Placido 893, San Luis , Argentina.
-          1808-521-1868 | info@aiu.edu</p>
+        <p> Telefono: 0808-123-1148 | Acreditación | Política de Privacidad | info@ua.edu </p>
+        <p> Montes Placido 893, San Luis , Argentina. 1808-521-1868 | info@aiu.edu</p>
         <p> Copyright © 1996-2023 Universidad de Artanis. </p>
       </div>
     </div>

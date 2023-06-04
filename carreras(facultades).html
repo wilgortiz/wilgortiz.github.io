@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Carreras y Facultades</title>
+
+
+    <style>
+        .barra {
+
+            height: 70px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 10px;
+
+        }
+
+        img {
+            height: 70px;
+        }
+
+        nav ul {
+            list-style: none;
+            font-family: helvetica;
+            font-size: 20px;
+            margin: 0;
+            padding: 0;
+            display: flex;
+        }
+
+        nav li {
+            margin: 0 10px;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: #ffffff;
+        }
+
+        body {
+            background-color: purple;
+        }
+
+        #cont_titulo {
+            height: 100px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-top: 5px;
+            background-color: rgba(240, 248, 255, 0.583);
+        }
+
+        .facultades {
+            padding: 0px 30px 0px 30px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            flex-direction: column;
+            margin-top: 5px;
+            font-family: helvetica;
+            background-color: aliceblue;
+
+        }
+
+
+
+        .facultades h2 {
+
+
+            background-color: aliceblue;
+            font-size: 25px;
+            font-weight: bold;
+            font-family: helvetica;
+        }
+
+
+        #infoFacultades {
+            font-family: helvetica;
+            padding: 5px;
+            margin-top: 5px;
+
+            background-color: aliceblue;
+        }
+
+
+        #infoFacultades ol {
+            list-style: disc;
+        }
+
+
+        #infoFacultades p {
+            font-family: helvetica;
+            font-weight: bold;
+
+            color: rgb(167, 66, 167);
+        }
+
+        .contenedorF {
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+        }
+
+
+        form {
+            display: flex;
+            flex-direction: column;
+
+            gap: 10px;
+
+            width: 300px;
+
+            padding: 30px;
+            margin: 10px;
+            border: 2px solid #27355052;
+            border-radius: 10px;
+        }
+
+        input,
+        button,
+        textarea {
+
+            border: 1px solid #27355052;
+
+        }
+
+        #errores {
+            border: 1px solid red;
+            padding: 5px;
+            display: none;
+        }
+
+        #errores p {
+            color: red;
+        }
+
+        .error {
+            border: 2px solid red;
+        }
+    </style>
+
+
+
+</head>
+
+<body>
+
+
+
+    <div class="barra">
+        <a href="index.html">
+            <img src="imagenes/logo-universidad.png" alt="logo de la universidad">
+        </a>
+
+    </div>
+
+
+
+    <div class="facultades">
+        <h2> Facultades y Carreras </h2>
+        
+        <p style="text-align: center;">Para inscribirse en alguna de nuestras carreras ingrese al siguiente link de
+            formulario,
+            elija alguna de ellas y en breve nos comunicaremos con usted para brindarle toda la info. </p>
+
+        <p>
+            <a href="carreras.html">ingrese aqui</a>
+
+        </p>
+    </div>
+
+
+
+    <div id="infoFacultades">
+        <OL>
+            <p> Facultad de Negocios </p>
+            <li> Contador Público </li>
+            <li> Licenciatura en Administración </li>
+            <li> Licenciatura en Administración de Sistemas y Empresas </li>
+            <li> Licenciatura en Marketing</li>
+            <li> Licenciatura en Recursos Humanos </li>
+
+        </OL>
+
+        <OL>
+            <p> Facultad de Diseño y Comunicación </p>
+
+            <li>Arquitectura</li>
+            <li> Diseño de Ilustración </li>
+            <li> Diseño de Moda (Diseño Textil e Indumentaria)</li>
+            <li> Diseño Gráfico </li>
+            <li> Licenciatura en Comunicación Digital</li>
+        </OL>
+
+        <ol>
+
+            <p> Facultad de Derecho </p>
+            <li> Abogacía </li>
+            <ol>
+                Diplomaturas:
+                <li>Diplomatura de Posgrado en Derecho Constitucional y Derechos Humanos</li>
+                <li> Diplomatura de Posgrado en Derecho de Familia </li>
+                <li> Diplomatura de Posgrado en Derecho Penal</li>
+            </ol>
+        </ol>
+
+        <ol>
+
+            <p> Facultad de Ciencias Sociales y Humanidades </p>
+
+            <li>Licenciatura en Humanidades y Ciencias Sociales</li>
+            <li> Licenciatura en Periodismo </li>
+            <li> Licenciatura en Periodismo: orientado a P. deportivo </li>
+            <li> Licenciatura en Relaciones Internacionales y Ciencia Política</li>
+            <li> Licenciatura en Psicología</li>
+        </ol>
+
+        <ol>
+            <p> Facultad de Ingeniería </p>
+
+            <li>Licenciatura en Ciencias de la Computacion</li>
+            <li> Tec. en desarrollo de Software</li>
+            <li> Analista Universitario en Sistemas</li>
+            <li> Ingeniería en Inteligencia Artificial</li>
+            <li> Licenciatura en Ciberseguridad</li>
+            <li> Ingeniería Electrónica </li>
+            <li> Licenciatura en Ciberseguridad</li>
+            <li> Licenciatura en Redes y Comunicación de Datos </li>
+
+        </ol>
+
+
+
+    </div>
+
+
+
+
+</body>
+
+
+
+
+</html>
